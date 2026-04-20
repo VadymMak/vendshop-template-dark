@@ -142,6 +142,7 @@ export interface ImageMap {
   hero: string;
   about: string;
   gallery: string[];
+  logo: string;
 }
 
 // Hero content

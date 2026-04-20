@@ -1,8 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { SITE_CONFIG } from '@/lib/config';
-import { NAV_ITEMS } from '@/lib/constants';
+import { NAV_ITEMS, IMAGES } from '@/lib/constants';
 import styles from './Header.module.css';
 
 export default function Header() {
@@ -40,8 +41,19 @@ export default function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${visible ? '' : styles.hidden}`}>
       <div className={`container ${styles.inner}`}>
         {/* Logo */}
-        <a href="#hero" className={styles.logo} onClick={(e) => handleNavClick(e, '#hero')}>
-          {SITE_CONFIG.name}
+        <a href="#hero" className={styles.logoLink} onClick={(e) => handleNavClick(e, '#hero')}>
+          {IMAGES.logo ? (
+            <Image
+              src={IMAGES.logo}
+              alt={SITE_CONFIG.name}
+              width={120}
+              height={40}
+              className={styles.logoImg}
+              style={{ objectFit: 'contain' }}
+            />
+          ) : (
+            <span className={styles.logoText}>{SITE_CONFIG.name}</span>
+          )}
         </a>
 
         {/* Desktop nav */}

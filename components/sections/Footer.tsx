@@ -1,5 +1,6 @@
+import Image from 'next/image';
 import { SITE_CONFIG } from '@/lib/config';
-import { NAV_ITEMS, CONTACT_ITEMS } from '@/lib/constants';
+import { NAV_ITEMS, CONTACT_ITEMS, IMAGES } from '@/lib/constants';
 import { t } from '@/lib/get-ui-text';
 import styles from './Footer.module.css';
 
@@ -12,7 +13,18 @@ export default function Footer() {
       <div className={`container ${styles.grid}`}>
         {/* Brand */}
         <div className={styles.brand}>
-          <div className={styles.logo}>{SITE_CONFIG.name}</div>
+          {IMAGES.logo ? (
+            <Image
+              src={IMAGES.logo}
+              alt={SITE_CONFIG.name}
+              width={140}
+              height={48}
+              className={styles.logoImg}
+              style={{ objectFit: 'contain' }}
+            />
+          ) : (
+            <div className={styles.logo}>{SITE_CONFIG.name}</div>
+          )}
           <p className={styles.tagline}>{SITE_CONFIG.tagline}</p>
           <p className={styles.copy}>
             {ui.footer.poweredBy}{' '}

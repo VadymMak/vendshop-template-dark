@@ -16,7 +16,7 @@
 }
 
 /* Over hero (not yet scrolled) — force readable colors on dark image */
-.header:not(.scrolled) .logo {
+.header:not(.scrolled) .logoText {
   color: var(--hero-text);
   text-shadow: 0 2px 8px var(--shadow-lg);
 }
@@ -44,14 +44,26 @@
   gap: var(--spacing-md);
 }
 
-.logo {
+.logoLink {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoText {
   font-family: var(--heading-font);
   font-size: var(--font-size-xl);
   font-weight: 700;
   color: var(--primary);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  flex-shrink: 0;
+}
+
+.logoImg {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 .nav {
