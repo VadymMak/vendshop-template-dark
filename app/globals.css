@@ -6,23 +6,23 @@
 
 /* Default fallback values (overridden at runtime by layout.tsx) */
 :root {
-  --primary: #F97316;
-  --primary-dark: #EA580C;
-  --primary-light: #FB923C;
-  --bg: #0F1620;
-  --bg-alt: #1A2332;
-  --card: #1F2937;
-  --card-hover: #283548;
-  --text: #F9FAFB;
-  --text-muted: #9CA3AF;
-  --border: rgba(255, 255, 255, 0.08);
+  --primary: #cbd5e1;
+  --primary-dark: #94a3b8;
+  --primary-light: #e2e8f0;
+  --bg: #0f172a;
+  --bg-alt: #1e2937;
+  --card: #1e2937;
+  --card-hover: #334155;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #334155;
 
-  /* Stats bar (theme-specific, overridden by layout.tsx) */
-  --stats-bg: #F97316;
-  --stats-text: #FFFFFF;
+  /* Stats bar */
+  --stats-bg: #1e2937;
+  --stats-text: #f8fafc;
 
-  /* Hero overlay (theme-specific, overridden by layout.tsx) */
-  --hero-overlay: rgba(0, 0, 0, 0.55);
+  /* Hero overlay */
+  --hero-overlay: rgba(15, 23, 42, 0.65);
 
   /* Hero — forced-white text layer (not theme-dependent) */
   --hero-text: #fff;
@@ -145,10 +145,10 @@ button {
 }
 
 /* ── Font switching ──────────────────────────────────────── */
-body.font-oswald     { --heading-font: 'Oswald', sans-serif; }
-body.font-playfair   { --heading-font: 'Playfair Display', serif; }
-body.font-cormorant  { --heading-font: 'Cormorant Garamond', serif; }
-body.font-inter      { --heading-font: 'Inter', sans-serif; }
+body.font-oswald     { --heading-font: 'Space Grotesk', sans-serif; }
+body.font-playfair   { --heading-font: 'Space Grotesk', sans-serif; }
+body.font-cormorant  { --heading-font: 'Space Grotesk', sans-serif; }
+body.font-inter      { --heading-font: 'Space Grotesk', sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
