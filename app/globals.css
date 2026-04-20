@@ -67,6 +67,7 @@
 
   /* Header glass effect */
   --header-bg: color-mix(in srgb, var(--bg) 90%, transparent);
+  --header-glass-bg: rgba(0, 0, 0, 0.3);
 
   /* Hero text dim */
   --text-dim: color-mix(in srgb, var(--text) 80%, transparent);

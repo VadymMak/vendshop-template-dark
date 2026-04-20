@@ -5,6 +5,9 @@
   z-index: 100;
   height: var(--header-h);
   transform: translateY(0);
+  background: var(--header-glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: transform 0.3s ease, background var(--transition), backdrop-filter var(--transition), box-shadow var(--transition);
 }
 
