@@ -1,0 +1,137 @@
+.section {
+  scroll-margin-top: var(--header-h);
+}
+
+.grid {
+  display: grid;
+  gap: 6px;
+}
+
+/* ── 1 photo: full width ── */
+.grid1 {
+  grid-template-columns: 1fr;
+}
+.grid1 .featured {
+  height: 420px;
+  grid-column: unset;
+  grid-row: unset;
+}
+
+/* ── 2 photos: two equal columns ── */
+.grid2 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 300px;
+}
+.grid2 .featured {
+  grid-column: unset;
+  grid-row: unset;
+}
+
+/* ── 3 photos: featured left (span 2 rows), two small right ── */
+.grid3 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 220px;
+}
+.grid3 .featured {
+  grid-column: unset;
+  grid-row: span 2;
+}
+
+/* ── 4 photos: 2×2 grid ── */
+.grid4 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 240px;
+}
+.grid4 .featured {
+  grid-column: unset;
+  grid-row: unset;
+}
+
+/* ── 5 photos: featured top-left (span 2 cols), four below 2×2 ── */
+.grid5 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 220px;
+}
+.grid5 .featured {
+  grid-column: span 2;
+  grid-row: unset;
+}
+
+/* ── 6 photos: featured 2×2, five others in 3-col grid ── */
+.grid6 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 220px;
+}
+.grid6 .featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* ── 7+ photos: 3-col masonry-style, featured spans 2 cols ── */
+.grid7plus {
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 220px;
+}
+.grid7plus .featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* ── Shared item styles ── */
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  transition: background var(--transition);
+}
+
+.item:hover::after {
+  background: var(--overlay-md);
+}
+
+.item img {
+  transition: transform var(--transition);
+}
+
+.item:hover img {
+  transform: scale(1.04);
+}
+
+/* ── Mobile: single column ── */
+@media (max-width: 768px) {
+  .grid,
+  .grid1,
+  .grid2,
+  .grid3,
+  .grid4,
+  .grid5,
+  .grid6,
+  .grid7plus {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .featured,
+  .grid1 .featured,
+  .grid2 .featured,
+  .grid3 .featured,
+  .grid4 .featured,
+  .grid5 .featured,
+  .grid6 .featured,
+  .grid7plus .featured {
+    grid-column: unset;
+    grid-row: unset;
+    height: 240px;
+  }
+
+  .item {
+    height: 200px;
+  }
+}

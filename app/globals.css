@@ -1,0 +1,339 @@
+/* ============================================================
+   VendShop Template — globals.css
+   Colors are CSS variables injected from SITE_CONFIG via
+   inline style on <html> in layout.tsx. Do NOT hardcode colors.
+   ============================================================ */
+
+/* Default fallback values (overridden at runtime by layout.tsx) */
+:root {
+  --primary: #F97316;
+  --primary-dark: #EA580C;
+  --primary-light: #FB923C;
+  --bg: #0F1620;
+  --bg-alt: #1A2332;
+  --card: #1F2937;
+  --card-hover: #283548;
+  --text: #F9FAFB;
+  --text-muted: #9CA3AF;
+  --border: rgba(255, 255, 255, 0.08);
+
+  /* Stats bar (theme-specific, overridden by layout.tsx) */
+  --stats-bg: #F97316;
+  --stats-text: #FFFFFF;
+
+  /* Hero overlay (theme-specific, overridden by layout.tsx) */
+  --hero-overlay: rgba(0, 0, 0, 0.55);
+
+  /* Hero — forced-white text layer (not theme-dependent) */
+  --hero-text: #fff;
+  --hero-text-dim: rgba(255, 255, 255, 0.92);
+  --hero-text-faint: rgba(255, 255, 255, 0.85);
+  --hero-panel-bg: rgba(0, 0, 0, 0.35);
+  --hero-overlay-bottom: rgba(0, 0, 0, 0.65);
+  --hero-overlay-mid: rgba(0, 0, 0, 0.25);
+
+  /* Button outline-light variant (for use on dark/image backgrounds) */
+  --btn-outline-light-border: rgba(255, 255, 255, 0.7);
+  --btn-outline-light-hover: rgba(255, 255, 255, 0.15);
+
+  /* Chat toggle (theme-specific, overridden by layout.tsx) */
+  --chat-toggle-bg: #1F2937;
+  --chat-toggle-color: #F9FAFB;
+
+  /* Text on primary-colored backgrounds (fixed — always white) */
+  --text-on-primary: #fff;
+  --text-on-primary-dim: color-mix(in srgb, var(--text-on-primary) 80%, transparent);
+  --text-on-primary-faint: color-mix(in srgb, var(--text-on-primary) 20%, transparent);
+
+  /* Dark overlays (for image overlays, lightboxes) */
+  --overlay-sm: rgba(0, 0, 0, 0.15);
+  --overlay-md: rgba(0, 0, 0, 0.2);
+  --overlay-lg: rgba(0, 0, 0, 0.4);
+  --overlay-xl: rgba(0, 0, 0, 0.5);
+  --overlay-2xl: rgba(0, 0, 0, 0.75);
+  --overlay-3xl: rgba(0, 0, 0, 0.92);
+
+  /* Shadow colors */
+  --shadow-xs: rgba(0, 0, 0, 0.3);
+  --shadow-sm: rgba(0, 0, 0, 0.35);
+  --shadow-md: rgba(0, 0, 0, 0.4);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+
+  /* WhatsApp brand (fixed, not theme-dependent) */
+  --whatsapp: #25D366;
+  --whatsapp-shadow: rgba(37, 211, 102, 0.45);
+  --whatsapp-shadow-hover: rgba(37, 211, 102, 0.6);
+  --whatsapp-shadow-pulse: rgba(37, 211, 102, 0.75);
+
+  /* Header glass effect */
+  --header-bg: color-mix(in srgb, var(--bg) 90%, transparent);
+
+  /* Hero text dim */
+  --text-dim: color-mix(in srgb, var(--text) 80%, transparent);
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.75rem;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --transition: 0.25s ease;
+
+  --container: 1200px;
+  --header-h: 72px;
+}
+
+/* ── Reset ───────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: var(--font-size-md);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ── Font switching ──────────────────────────────────────── */
+body.font-oswald     { --heading-font: 'Oswald', sans-serif; }
+body.font-playfair   { --heading-font: 'Playfair Display', serif; }
+body.font-cormorant  { --heading-font: 'Cormorant Garamond', serif; }
+body.font-inter      { --heading-font: 'Inter', sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+/* ── Layout helpers ──────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--spacing-md);
+}
+
+.section {
+  padding-block: var(--spacing-lg);
+}
+
+.section--alt {
+  background: var(--bg-alt);
+}
+
+/* ── Card ────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  background: var(--card-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--shadow-sm);
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: none;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--primary);
+  color: var(--text-on-primary);
+}
+
+.btn--primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-md);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--border);
+}
+
+.btn--outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn--outline-light {
+  background: transparent;
+  color: var(--hero-text);
+  border: 2px solid var(--btn-outline-light-border);
+  backdrop-filter: blur(4px);
+  transition: all var(--transition);
+}
+.btn--outline-light:hover {
+  background: var(--btn-outline-light-hover);
+  border-color: var(--hero-text);
+}
+
+/* ── Section heading ─────────────────────────────────────── */
+.section-title {
+  font-size: var(--font-size-2xl);
+  color: var(--text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.section-title span {
+  color: var(--primary);
+}
+
+.section-subtitle {
+  font-size: var(--font-size-md);
+  color: var(--text-muted);
+  max-width: 580px;
+}
+
+.section-header {
+  margin-bottom: var(--spacing-md);
+}
+
+/* ── Stars ───────────────────────────────────────────────── */
+.stars {
+  color: var(--primary);
+  font-size: var(--font-size-lg);
+  letter-spacing: 2px;
+}
+
+/* ── Form inputs ─────────────────────────────────────────── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.form-control {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: var(--font-size-md);
+  padding: 0.7rem 1rem;
+  width: 100%;
+  outline: none;
+  font-family: inherit;
+  transition: border-color var(--transition);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── Success message ─────────────────────────────────────── */
+.success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 3rem;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  :root {
+    --font-size-3xl: 2.25rem;
+    --font-size-2xl: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-3xl: 1.85rem;
+    --font-size-2xl: 1.5rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 5rem;
+  }
+
+  .container {
+    padding-inline: var(--spacing-sm);
+  }
+}

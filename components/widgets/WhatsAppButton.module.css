@@ -1,0 +1,35 @@
+.btn {
+  position: fixed;
+  bottom: 80px;
+  right: 24px;
+  z-index: 50;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: var(--text-on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px var(--whatsapp-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px var(--whatsapp-shadow-hover);
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 4px 16px var(--whatsapp-shadow); }
+  50% { box-shadow: 0 4px 28px var(--whatsapp-shadow-pulse); }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    bottom: 88px;
+    right: 16px;
+  }
+}
