@@ -149,4 +149,5 @@ export interface ImageMap {
 export interface HeroContent {
   title: string;
   subtitle: string;
+  layout?: 'split' | 'full';
 }
