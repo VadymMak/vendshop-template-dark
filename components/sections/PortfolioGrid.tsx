@@ -3,10 +3,12 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { IMAGES } from '@/lib/constants';
+import { t } from '@/lib/get-ui-text';
 import styles from './PortfolioGrid.module.css';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
 export default function PortfolioGrid() {
+  const ui = t();
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   const allImages = [IMAGES.hero, IMAGES.about, ...IMAGES.gallery];
@@ -16,9 +18,7 @@ export default function PortfolioGrid() {
       <div className="container">
         <ScrollReveal>
           <div className="section-header">
-            <h2 className="section-title">
-              Naše <span>Práce</span>
-            </h2>
+            <h2 className="section-title">{ui.portfolio.title}</h2>
             <p className="section-subtitle">Výber z našich realizovaných projektov.</p>
           </div>
         </ScrollReveal>
@@ -49,7 +49,7 @@ export default function PortfolioGrid() {
       {/* Lightbox */}
       {lightbox && (
         <div className={styles.lightbox} onClick={() => setLightbox(null)}>
-          <button className={styles.close} aria-label="Zavrieť">✕</button>
+          <button className={styles.close} aria-label={ui.chat.close}>✕</button>
           <div className={styles.lightboxImg}>
             <Image
               src={lightbox}
