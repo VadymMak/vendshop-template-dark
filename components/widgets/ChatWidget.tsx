@@ -58,7 +58,7 @@ export default function ChatWidget() {
       <button
         className={styles.toggle}
         onClick={() => setOpen(!open)}
-        aria-label={open ? 'Zavrieť chat' : 'Otvoriť chat'}
+        aria-label={open ? ui.chat.close : ui.chat.open}
       >
         {open ? '✕' : '💬'}
       </button>
@@ -71,7 +71,7 @@ export default function ChatWidget() {
             <div className={styles.avatar}>🤖</div>
             <div>
               <div className={styles.botName}>{SITE_CONFIG.name}</div>
-              <div className={styles.status}>Online</div>
+              <div className={styles.status}>{ui.chat.online}</div>
             </div>
           </div>
 
@@ -105,12 +105,12 @@ export default function ChatWidget() {
             <input
               type="text"
               className={styles.input}
-              placeholder="Napíšte správu..."
+              placeholder={ui.chat.placeholder}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKey}
             />
-            <button className={styles.sendBtn} onClick={handleSend} aria-label="Odoslať">
+            <button className={styles.sendBtn} onClick={handleSend} aria-label={ui.chat.send}>
               ➤
             </button>
           </div>
