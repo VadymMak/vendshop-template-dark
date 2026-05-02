@@ -4,9 +4,11 @@ import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { SITE_CONFIG } from '@/lib/config';
 import { NAV_ITEMS, IMAGES } from '@/lib/constants';
+import { t } from '@/lib/get-ui-text';
 import styles from './Header.module.css';
 
 export default function Header() {
+  const ui = t();
   const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -83,7 +85,7 @@ export default function Header() {
           <button
             className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ''}`}
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
+            aria-label={ui.nav.menu}
           >
             <span />
             <span />
