@@ -16,7 +16,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
   footer: { rights: string; poweredBy: string; nav: string; contact: string; booking: string; bookingText: string; bookBtn: string; privacy: string; cookies: string };
   chat: { greeting: string; fallback: string; placeholder: string; send: string; open: string; close: string; online: string };
   faq: { title: string };
-  portfolio: { title: string };
+  portfolio: { title: string; subtitle: string; openImage: string };
   whatsapp: { label: string };
 }> = {
   sk: {
@@ -35,7 +35,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     footer: { rights: 'Všetky práva vyhradené.', poweredBy: 'Vytvorené cez', nav: 'Navigácia', contact: 'Kontakt', booking: 'Rezervácia', bookingText: 'Rezervujte si termín online alebo nás kontaktujte priamo.', bookBtn: 'Rezervovať', privacy: 'Ochrana súkromia', cookies: 'Cookies' },
     chat: { greeting: 'Dobrý deň! Ako vám môžem pomôcť?', fallback: 'Ďakujeme za správu. Ozveme sa vám čo najskôr.', placeholder: 'Napíšte správu...', send: 'Odoslať', open: 'Otvoriť chat', close: 'Zavrieť', online: 'Online' },
     faq: { title: 'Časté otázky' },
-    portfolio: { title: 'Naše práce' },
+    portfolio: { title: 'Naše práce', subtitle: 'Výber z našich realizovaných projektov.', openImage: 'Otvoriť obrázok' },
     whatsapp: { label: 'Kontaktovať cez WhatsApp' },
   },
   ru: {
@@ -54,7 +54,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     footer: { rights: 'Все права защищены.', poweredBy: 'Создано с помощью', nav: 'Навигация', contact: 'Контакты', booking: 'Бронирование', bookingText: 'Забронируйте онлайн или свяжитесь с нами.', bookBtn: 'Забронировать', privacy: 'Политика конфиденциальности', cookies: 'Cookies' },
     chat: { greeting: 'Здравствуйте! Чем могу помочь?', fallback: 'Спасибо за сообщение. Мы свяжемся с вами.', placeholder: 'Напишите сообщение...', send: 'Отправить', open: 'Открыть чат', close: 'Закрыть', online: 'Онлайн' },
     faq: { title: 'Частые вопросы' },
-    portfolio: { title: 'Наши работы' },
+    portfolio: { title: 'Наши работы', subtitle: 'Подборка наших реализованных проектов.', openImage: 'Открыть изображение' },
     whatsapp: { label: 'Связаться через WhatsApp' },
   },
   en: {
@@ -73,7 +73,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     footer: { rights: 'All rights reserved.', poweredBy: 'Powered by', nav: 'Navigation', contact: 'Contact', booking: 'Booking', bookingText: 'Book online or contact us directly.', bookBtn: 'Book Now', privacy: 'Privacy Policy', cookies: 'Cookies' },
     chat: { greeting: 'Hello! How can I help you?', fallback: 'Thank you for your message. We will get back to you soon.', placeholder: 'Type a message...', send: 'Send', open: 'Open chat', close: 'Close', online: 'Online' },
     faq: { title: 'FAQ' },
-    portfolio: { title: 'Our work' },
+    portfolio: { title: 'Our work', subtitle: 'A selection of our completed projects.', openImage: 'Open image' },
     whatsapp: { label: 'Contact via WhatsApp' },
   },
   de: {
@@ -92,7 +92,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     footer: { rights: 'Alle Rechte vorbehalten.', poweredBy: 'Erstellt mit', nav: 'Navigation', contact: 'Kontakt', booking: 'Buchung', bookingText: 'Buchen Sie online oder kontaktieren Sie uns.', bookBtn: 'Buchen', privacy: 'Datenschutz', cookies: 'Cookies' },
     chat: { greeting: 'Hallo! Wie kann ich Ihnen helfen?', fallback: 'Danke für Ihre Nachricht. Wir melden uns bei Ihnen.', placeholder: 'Nachricht schreiben...', send: 'Senden', open: 'Chat öffnen', close: 'Schließen', online: 'Online' },
     faq: { title: 'Häufige Fragen' },
-    portfolio: { title: 'Unsere Arbeiten' },
+    portfolio: { title: 'Unsere Arbeiten', subtitle: 'Eine Auswahl unserer abgeschlossenen Projekte.', openImage: 'Bild öffnen' },
     whatsapp: { label: 'Über WhatsApp kontaktieren' },
   },
   cs: {
@@ -111,7 +111,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     footer: { rights: 'Všechna práva vyhrazena.', poweredBy: 'Vytvořeno pomocí', nav: 'Navigace', contact: 'Kontakt', booking: 'Rezervace', bookingText: 'Rezervujte si termín online nebo nás kontaktujte přímo.', bookBtn: 'Rezervovat', privacy: 'Ochrana soukromí', cookies: 'Cookies' },
     chat: { greeting: 'Dobrý den! Jak vám mohu pomoci?', fallback: 'Děkuji za zprávu. Ozveme se vám co nejdříve.', placeholder: 'Napište zprávu...', send: 'Odeslat', open: 'Otevřít chat', close: 'Zavřít', online: 'Online' },
     faq: { title: 'Časté dotazy' },
-    portfolio: { title: 'Naše práce' },
+    portfolio: { title: 'Naše práce', subtitle: 'Výběr z našich realizovaných projektů.', openImage: 'Otevřít obrázek' },
     whatsapp: { label: 'Kontaktovat přes WhatsApp' },
   },
   uk: {
@@ -130,7 +130,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     footer: { rights: 'Всі права захищені.', poweredBy: 'Створено за допомогою', nav: 'Навігація', contact: 'Контакти', booking: 'Бронювання', bookingText: 'Забронюйте онлайн або зв\'яжіться з нами.', bookBtn: 'Забронювати', privacy: 'Політика конфіденційності', cookies: 'Cookies' },
     chat: { greeting: 'Вітаю! Чим можу допомогти?', fallback: "Дякую за повідомлення. Ми зв'яжемося з вами.", placeholder: 'Напишіть повідомлення...', send: 'Надіслати', open: 'Відкрити чат', close: 'Закрити', online: 'Онлайн' },
     faq: { title: 'Часті питання' },
-    portfolio: { title: 'Наші роботи' },
+    portfolio: { title: 'Наші роботи', subtitle: 'Вибір наших реалізованих проектів.', openImage: 'Відкрити зображення' },
     whatsapp: { label: "Зв'язатися через WhatsApp" },
   },
 };
