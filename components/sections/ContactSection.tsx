@@ -45,7 +45,7 @@ export default function ContactSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Mapa"
+                title={ui.contact.mapTitle}
               />
             </ScrollReveal>
           </div>
