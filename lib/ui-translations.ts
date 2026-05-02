@@ -1,7 +1,7 @@
 import type { SiteLanguage } from './types';
 
 export const UI_TRANSLATIONS: Record<SiteLanguage, {
-  nav: { services: string; pricing: string; gallery: string; reviews: string; contact: string; book: string };
+  nav: { services: string; pricing: string; gallery: string; reviews: string; contact: string; book: string; menu: string };
   hero: { cta1: string; cta2: string };
   stats: { years: string; clients: string; rating: string; guarantee: string };
   services: { title: string; subtitle: string };
@@ -12,13 +12,15 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
   reviews: { title: string; subtitle: string };
   whyUs: { title: string; subtitle: string };
   booking: { title: string; subtitle: string; name: string; phone: string; service: string; date: string; submit: string; success: string; benefit1: string; benefit2: string; benefit3: string; benefit4: string; selectService: string; note: string };
-  contact: { title: string; subtitle: string; address: string; phone: string; email: string; hours: string };
+  contact: { title: string; subtitle: string; address: string; phone: string; email: string; hours: string; mapTitle: string };
   footer: { rights: string; poweredBy: string; nav: string; contact: string; booking: string; bookingText: string; bookBtn: string; privacy: string; cookies: string };
-  chat: { greeting: string; fallback: string };
+  chat: { greeting: string; fallback: string; placeholder: string; send: string; open: string; close: string; online: string };
   faq: { title: string };
+  portfolio: { title: string };
+  whatsapp: { label: string };
 }> = {
   sk: {
-    nav: { services: 'Služby', pricing: 'Cenník', gallery: 'Galéria', reviews: 'Recenzie', contact: 'Kontakt', book: 'Objednať' },
+    nav: { services: 'Služby', pricing: 'Cenník', gallery: 'Galéria', reviews: 'Recenzie', contact: 'Kontakt', book: 'Objednať', menu: 'Menu' },
     hero: { cta1: 'Rezervovať termín', cta2: 'Naše služby' },
     stats: { years: 'Rokov skúseností', clients: 'Spokojných klientov', rating: 'Hodnotenie', guarantee: 'Záruka' },
     services: { title: 'Naše služby', subtitle: 'Profesionálne služby, ktorým môžete dôverovať.' },
@@ -29,13 +31,15 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     reviews: { title: 'Recenzie', subtitle: 'Čo hovoria naši klienti.' },
     whyUs: { title: 'Prečo my', subtitle: 'Profesionálny prístup ku každému klientovi.' },
     booking: { title: 'Rezervácia', subtitle: 'Objednajte sa online.', name: 'Meno', phone: 'Telefón', service: 'Služba', date: 'Dátum', submit: 'Odoslať', success: 'Ďakujeme! Ozveme sa vám.', benefit1: 'Rýchla odpoveď do 24 hodín', benefit2: 'Bez záväzkov — rezervácia je bezplatná', benefit3: 'Bezplatná cenová ponuka', benefit4: 'Flexibilné termíny', selectService: 'Vyberte službu...', note: 'Poznámka' },
-    contact: { title: 'Kontakt', subtitle: 'Nájdete nás tu alebo nám napíšte.', address: 'Adresa', phone: 'Telefón', email: 'E-mail', hours: 'Otváracie hodiny' },
+    contact: { title: 'Kontakt', subtitle: 'Nájdete nás tu alebo nám napíšte.', address: 'Adresa', phone: 'Telefón', email: 'E-mail', hours: 'Otváracie hodiny', mapTitle: 'Mapa' },
     footer: { rights: 'Všetky práva vyhradené.', poweredBy: 'Vytvorené cez', nav: 'Navigácia', contact: 'Kontakt', booking: 'Rezervácia', bookingText: 'Rezervujte si termín online alebo nás kontaktujte priamo.', bookBtn: 'Rezervovať', privacy: 'Ochrana súkromia', cookies: 'Cookies' },
-    chat: { greeting: 'Dobrý deň! Ako vám môžem pomôcť?', fallback: 'Ďakujeme za správu. Ozveme sa vám čo najskôr.' },
+    chat: { greeting: 'Dobrý deň! Ako vám môžem pomôcť?', fallback: 'Ďakujeme za správu. Ozveme sa vám čo najskôr.', placeholder: 'Napíšte správu...', send: 'Odoslať', open: 'Otvoriť chat', close: 'Zavrieť', online: 'Online' },
     faq: { title: 'Časté otázky' },
+    portfolio: { title: 'Naše práce' },
+    whatsapp: { label: 'Kontaktovať cez WhatsApp' },
   },
   ru: {
-    nav: { services: 'Услуги', pricing: 'Цены', gallery: 'Галерея', reviews: 'Отзывы', contact: 'Контакт', book: 'Записаться' },
+    nav: { services: 'Услуги', pricing: 'Цены', gallery: 'Галерея', reviews: 'Отзывы', contact: 'Контакт', book: 'Записаться', menu: 'Меню' },
     hero: { cta1: 'Записаться', cta2: 'Наши услуги' },
     stats: { years: 'Лет опыта', clients: 'Довольных клиентов', rating: 'Рейтинг', guarantee: 'Гарантия' },
     services: { title: 'Наши услуги', subtitle: 'Профессиональные услуги, которым можно доверять.' },
@@ -46,13 +50,15 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     reviews: { title: 'Отзывы', subtitle: 'Что говорят наши клиенты.' },
     whyUs: { title: 'Почему мы', subtitle: 'Профессиональный подход к каждому клиенту.' },
     booking: { title: 'Запись', subtitle: 'Запишитесь онлайн.', name: 'Имя', phone: 'Телефон', service: 'Услуга', date: 'Дата', submit: 'Отправить', success: 'Спасибо! Мы свяжемся с вами.', benefit1: 'Быстрый ответ в течение 24 часов', benefit2: 'Без обязательств — запись бесплатна', benefit3: 'Бесплатная ценовая консультация', benefit4: 'Гибкий график', selectService: 'Выберите услугу...', note: 'Примечание' },
-    contact: { title: 'Контакты', subtitle: 'Найдите нас здесь или напишите нам.', address: 'Адрес', phone: 'Телефон', email: 'E-mail', hours: 'Режим работы' },
+    contact: { title: 'Контакты', subtitle: 'Найдите нас здесь или напишите нам.', address: 'Адрес', phone: 'Телефон', email: 'E-mail', hours: 'Режим работы', mapTitle: 'Карта' },
     footer: { rights: 'Все права защищены.', poweredBy: 'Создано с помощью', nav: 'Навигация', contact: 'Контакты', booking: 'Бронирование', bookingText: 'Забронируйте онлайн или свяжитесь с нами.', bookBtn: 'Забронировать', privacy: 'Политика конфиденциальности', cookies: 'Cookies' },
-    chat: { greeting: 'Здравствуйте! Чем могу помочь?', fallback: 'Спасибо за сообщение. Мы свяжемся с вами.' },
+    chat: { greeting: 'Здравствуйте! Чем могу помочь?', fallback: 'Спасибо за сообщение. Мы свяжемся с вами.', placeholder: 'Напишите сообщение...', send: 'Отправить', open: 'Открыть чат', close: 'Закрыть', online: 'Онлайн' },
     faq: { title: 'Частые вопросы' },
+    portfolio: { title: 'Наши работы' },
+    whatsapp: { label: 'Связаться через WhatsApp' },
   },
   en: {
-    nav: { services: 'Services', pricing: 'Pricing', gallery: 'Gallery', reviews: 'Reviews', contact: 'Contact', book: 'Book Now' },
+    nav: { services: 'Services', pricing: 'Pricing', gallery: 'Gallery', reviews: 'Reviews', contact: 'Contact', book: 'Book Now', menu: 'Menu' },
     hero: { cta1: 'Book Now', cta2: 'Our Services' },
     stats: { years: 'Years of experience', clients: 'Happy clients', rating: 'Rating', guarantee: 'Guarantee' },
     services: { title: 'Our Services', subtitle: 'Professional services you can trust.' },
@@ -63,13 +69,15 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     reviews: { title: 'Reviews', subtitle: 'What our clients say.' },
     whyUs: { title: 'Why Us', subtitle: 'Professional approach to every client.' },
     booking: { title: 'Booking', subtitle: 'Book online.', name: 'Name', phone: 'Phone', service: 'Service', date: 'Date', submit: 'Submit', success: 'Thank you! We will contact you soon.', benefit1: 'Quick response within 24 hours', benefit2: 'No obligations — booking is free', benefit3: 'Free price quote', benefit4: 'Flexible scheduling', selectService: 'Select a service...', note: 'Note' },
-    contact: { title: 'Contact', subtitle: 'Find us here or write to us.', address: 'Address', phone: 'Phone', email: 'Email', hours: 'Working hours' },
+    contact: { title: 'Contact', subtitle: 'Find us here or write to us.', address: 'Address', phone: 'Phone', email: 'Email', hours: 'Working hours', mapTitle: 'Map' },
     footer: { rights: 'All rights reserved.', poweredBy: 'Powered by', nav: 'Navigation', contact: 'Contact', booking: 'Booking', bookingText: 'Book online or contact us directly.', bookBtn: 'Book Now', privacy: 'Privacy Policy', cookies: 'Cookies' },
-    chat: { greeting: 'Hello! How can I help you?', fallback: 'Thank you for your message. We will get back to you soon.' },
+    chat: { greeting: 'Hello! How can I help you?', fallback: 'Thank you for your message. We will get back to you soon.', placeholder: 'Type a message...', send: 'Send', open: 'Open chat', close: 'Close', online: 'Online' },
     faq: { title: 'FAQ' },
+    portfolio: { title: 'Our work' },
+    whatsapp: { label: 'Contact via WhatsApp' },
   },
   de: {
-    nav: { services: 'Leistungen', pricing: 'Preise', gallery: 'Galerie', reviews: 'Bewertungen', contact: 'Kontakt', book: 'Termin buchen' },
+    nav: { services: 'Leistungen', pricing: 'Preise', gallery: 'Galerie', reviews: 'Bewertungen', contact: 'Kontakt', book: 'Termin buchen', menu: 'Menü' },
     hero: { cta1: 'Termin buchen', cta2: 'Unsere Leistungen' },
     stats: { years: 'Jahre Erfahrung', clients: 'Zufriedene Kunden', rating: 'Bewertung', guarantee: 'Garantie' },
     services: { title: 'Unsere Leistungen', subtitle: 'Professionelle Dienstleistungen, denen Sie vertrauen können.' },
@@ -80,13 +88,15 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     reviews: { title: 'Bewertungen', subtitle: 'Was unsere Kunden sagen.' },
     whyUs: { title: 'Warum wir', subtitle: 'Professioneller Ansatz für jeden Kunden.' },
     booking: { title: 'Buchung', subtitle: 'Online buchen.', name: 'Name', phone: 'Telefon', service: 'Leistung', date: 'Datum', submit: 'Absenden', success: 'Vielen Dank! Wir melden uns bei Ihnen.', benefit1: 'Schnelle Antwort innerhalb von 24 Stunden', benefit2: 'Keine Verpflichtungen — Buchung ist kostenlos', benefit3: 'Kostenloses Preisangebot', benefit4: 'Flexible Termine', selectService: 'Leistung auswählen...', note: 'Notiz' },
-    contact: { title: 'Kontakt', subtitle: 'Finden Sie uns hier oder schreiben Sie uns.', address: 'Adresse', phone: 'Telefon', email: 'E-Mail', hours: 'Öffnungszeiten' },
+    contact: { title: 'Kontakt', subtitle: 'Finden Sie uns hier oder schreiben Sie uns.', address: 'Adresse', phone: 'Telefon', email: 'E-Mail', hours: 'Öffnungszeiten', mapTitle: 'Karte' },
     footer: { rights: 'Alle Rechte vorbehalten.', poweredBy: 'Erstellt mit', nav: 'Navigation', contact: 'Kontakt', booking: 'Buchung', bookingText: 'Buchen Sie online oder kontaktieren Sie uns.', bookBtn: 'Buchen', privacy: 'Datenschutz', cookies: 'Cookies' },
-    chat: { greeting: 'Hallo! Wie kann ich Ihnen helfen?', fallback: 'Danke für Ihre Nachricht. Wir melden uns bei Ihnen.' },
+    chat: { greeting: 'Hallo! Wie kann ich Ihnen helfen?', fallback: 'Danke für Ihre Nachricht. Wir melden uns bei Ihnen.', placeholder: 'Nachricht schreiben...', send: 'Senden', open: 'Chat öffnen', close: 'Schließen', online: 'Online' },
     faq: { title: 'Häufige Fragen' },
+    portfolio: { title: 'Unsere Arbeiten' },
+    whatsapp: { label: 'Über WhatsApp kontaktieren' },
   },
   cs: {
-    nav: { services: 'Služby', pricing: 'Ceník', gallery: 'Galerie', reviews: 'Recenze', contact: 'Kontakt', book: 'Objednat' },
+    nav: { services: 'Služby', pricing: 'Ceník', gallery: 'Galerie', reviews: 'Recenze', contact: 'Kontakt', book: 'Objednat', menu: 'Menu' },
     hero: { cta1: 'Objednat termín', cta2: 'Naše služby' },
     stats: { years: 'Let zkušeností', clients: 'Spokojených klientů', rating: 'Hodnocení', guarantee: 'Záruka' },
     services: { title: 'Naše služby', subtitle: 'Profesionální služby, kterým můžete důvěřovat.' },
@@ -97,13 +107,15 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     reviews: { title: 'Recenze', subtitle: 'Co říkají naši klienti.' },
     whyUs: { title: 'Proč my', subtitle: 'Profesionální přístup ke každému klientovi.' },
     booking: { title: 'Rezervace', subtitle: 'Objednejte se online.', name: 'Jméno', phone: 'Telefon', service: 'Služba', date: 'Datum', submit: 'Odeslat', success: 'Děkujeme! Ozveme se vám.', benefit1: 'Rychlá odpověď do 24 hodin', benefit2: 'Bez závazků — rezervace je zdarma', benefit3: 'Bezplatná cenová nabídka', benefit4: 'Flexibilní termíny', selectService: 'Vyberte službu...', note: 'Poznámka' },
-    contact: { title: 'Kontakt', subtitle: 'Najdete nás zde nebo nám napište.', address: 'Adresa', phone: 'Telefon', email: 'E-mail', hours: 'Otevírací doba' },
+    contact: { title: 'Kontakt', subtitle: 'Najdete nás zde nebo nám napište.', address: 'Adresa', phone: 'Telefon', email: 'E-mail', hours: 'Otevírací doba', mapTitle: 'Mapa' },
     footer: { rights: 'Všechna práva vyhrazena.', poweredBy: 'Vytvořeno pomocí', nav: 'Navigace', contact: 'Kontakt', booking: 'Rezervace', bookingText: 'Rezervujte si termín online nebo nás kontaktujte přímo.', bookBtn: 'Rezervovat', privacy: 'Ochrana soukromí', cookies: 'Cookies' },
-    chat: { greeting: 'Dobrý den! Jak vám mohu pomoci?', fallback: 'Děkuji za zprávu. Ozveme se vám co nejdříve.' },
+    chat: { greeting: 'Dobrý den! Jak vám mohu pomoci?', fallback: 'Děkuji za zprávu. Ozveme se vám co nejdříve.', placeholder: 'Napište zprávu...', send: 'Odeslat', open: 'Otevřít chat', close: 'Zavřít', online: 'Online' },
     faq: { title: 'Časté dotazy' },
+    portfolio: { title: 'Naše práce' },
+    whatsapp: { label: 'Kontaktovat přes WhatsApp' },
   },
   uk: {
-    nav: { services: 'Послуги', pricing: 'Ціни', gallery: 'Галерея', reviews: 'Відгуки', contact: 'Контакти', book: 'Записатися' },
+    nav: { services: 'Послуги', pricing: 'Ціни', gallery: 'Галерея', reviews: 'Відгуки', contact: 'Контакти', book: 'Записатися', menu: 'Меню' },
     hero: { cta1: 'Записатися', cta2: 'Наші послуги' },
     stats: { years: 'Років досвіду', clients: 'Задоволених клієнтів', rating: 'Рейтинг', guarantee: 'Гарантія' },
     services: { title: 'Наші послуги', subtitle: 'Професійні послуги, яким можна довіряти.' },
@@ -114,9 +126,11 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     reviews: { title: 'Відгуки', subtitle: 'Що кажуть наші клієнти.' },
     whyUs: { title: 'Чому ми', subtitle: 'Професійний підхід до кожного клієнта.' },
     booking: { title: 'Запис', subtitle: 'Запишіться онлайн.', name: "Ім'я", phone: 'Телефон', service: 'Послуга', date: 'Дата', submit: 'Відправити', success: "Дякуємо! Ми зв'яжемося з вами.", benefit1: 'Швидка відповідь протягом 24 годин', benefit2: "Без зобов'язань — запис безкоштовний", benefit3: 'Безкоштовна цінова пропозиція', benefit4: 'Гнучкий графік', selectService: 'Оберіть послугу...', note: 'Примітка' },
-    contact: { title: 'Контакти', subtitle: 'Знайдіть нас тут або напишіть нам.', address: 'Адреса', phone: 'Телефон', email: 'E-mail', hours: 'Графік роботи' },
+    contact: { title: 'Контакти', subtitle: 'Знайдіть нас тут або напишіть нам.', address: 'Адреса', phone: 'Телефон', email: 'E-mail', hours: 'Графік роботи', mapTitle: 'Карта' },
     footer: { rights: 'Всі права захищені.', poweredBy: 'Створено за допомогою', nav: 'Навігація', contact: 'Контакти', booking: 'Бронювання', bookingText: 'Забронюйте онлайн або зв\'яжіться з нами.', bookBtn: 'Забронювати', privacy: 'Політика конфіденційності', cookies: 'Cookies' },
-    chat: { greeting: 'Вітаю! Чим можу допомогти?', fallback: "Дякую за повідомлення. Ми зв'яжемося з вами." },
+    chat: { greeting: 'Вітаю! Чим можу допомогти?', fallback: "Дякую за повідомлення. Ми зв'яжемося з вами.", placeholder: 'Напишіть повідомлення...', send: 'Надіслати', open: 'Відкрити чат', close: 'Закрити', online: 'Онлайн' },
     faq: { title: 'Часті питання' },
+    portfolio: { title: 'Наші роботи' },
+    whatsapp: { label: "Зв'язатися через WhatsApp" },
   },
 };
