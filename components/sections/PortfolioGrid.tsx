@@ -19,7 +19,7 @@ export default function PortfolioGrid() {
         <ScrollReveal>
           <div className="section-header">
             <h2 className="section-title">{ui.portfolio.title}</h2>
-            <p className="section-subtitle">Výber z našich realizovaných projektov.</p>
+            <p className="section-subtitle">{ui.portfolio.subtitle}</p>
           </div>
         </ScrollReveal>
 
@@ -29,7 +29,7 @@ export default function PortfolioGrid() {
               key={i}
               className={styles.item}
               onClick={() => setLightbox(src)}
-              aria-label={`Otvoriť obrázok ${i + 1}`}
+              aria-label={`${ui.portfolio.openImage} ${i + 1}`}
             >
               <Image
                 src={src}
