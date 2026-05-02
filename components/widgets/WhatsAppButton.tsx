@@ -1,7 +1,9 @@
 import { SITE_CONFIG } from '@/lib/config';
+import { t } from '@/lib/get-ui-text';
 import styles from './WhatsAppButton.module.css';
 
 export default function WhatsAppButton() {
+  const ui = t();
   const url = `https://wa.me/${SITE_CONFIG.whatsappNumber}`;
 
   return (
@@ -10,7 +12,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       className={styles.btn}
-      aria-label="Kontaktovať cez WhatsApp"
+      aria-label={ui.whatsapp.label}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
