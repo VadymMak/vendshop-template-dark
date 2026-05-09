@@ -33,7 +33,7 @@ export default function PortfolioGrid() {
             >
               <Image
                 src={src}
-                alt={`Portfolio ${i + 1}`}
+                alt={`${ui.portfolio.imageAlt} ${i + 1}`}
                 fill
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -53,7 +53,7 @@ export default function PortfolioGrid() {
           <div className={styles.lightboxImg}>
             <Image
               src={lightbox}
-              alt="Portfolio detail"
+              alt={ui.portfolio.imageAlt}
               fill
               style={{ objectFit: 'contain' }}
               sizes="100vw"
