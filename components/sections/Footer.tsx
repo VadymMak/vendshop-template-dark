@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import { SITE_CONFIG } from '@/lib/config';
 import { NAV_ITEMS, CONTACT_ITEMS, IMAGES } from '@/lib/constants';
@@ -75,6 +76,12 @@ export default function Footer() {
           <div className={styles.bottomLinks}>
             <a href="#">{ui.footer.privacy}</a>
             <a href="#">{ui.footer.cookies}</a>
+            <button
+              className={styles.cookieSettingsBtn}
+              onClick={() => window.dispatchEvent(new Event('open-cookie-banner'))}
+            >
+              {ui.cookie.settings}
+            </button>
           </div>
         </div>
       </div>
