@@ -3,6 +3,8 @@ import { Space_Grotesk, Inter } from 'next/font/google';
 import './globals.css';
 import { SITE_CONFIG } from '@/lib/config';
 import { getPalette } from '@/lib/palettes';
+import CookieBanner from '@/components/widgets/CookieBanner';
+import { UI_TRANSLATIONS } from '@/lib/ui-translations';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -28,6 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const palette = getPalette(SITE_CONFIG.palette);
+  const ui = UI_TRANSLATIONS[SITE_CONFIG.language as keyof typeof UI_TRANSLATIONS] ?? UI_TRANSLATIONS['en'];
 
   const cssVars: React.CSSProperties & Record<string, string> = {
     '--primary':           palette.primary,
@@ -56,6 +59,7 @@ export default function RootLayout({
     >
       <body className="font-space-grotesk" data-theme="dark">
         {children}
+        <CookieBanner message={ui.cookie.message} accept={ui.cookie.accept} reject={ui.cookie.reject} learnMore={ui.cookie.learnMore} settings={ui.cookie.settings} />
       </body>
     </html>
   );
