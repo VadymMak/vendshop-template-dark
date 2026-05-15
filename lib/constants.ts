@@ -13,6 +13,7 @@ import type {
   ImageMap,
   HeroContent,
 } from './types';
+import { t } from './get-ui-text';
 
 // Switch to true when local /images/*.webp files are ready
 export const USE_LOCAL_IMAGES = false;
@@ -32,27 +33,27 @@ export const IMAGES: ImageMap = {
   hero: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80',
   about: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80',
   gallery: [],
-  logo: '';
+  logo: '',
 };
 
 // ---------------------------------------------------------------------------
 // NAVIGATION
 // ---------------------------------------------------------------------------
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Home',     href: '#hero'     },
-  { label: 'Services', href: '#services' },
-  { label: 'Reviews',  href: '#reviews'  },
-  { label: 'Contact',  href: '#contact'  },
+  { label: t().nav.home,     href: '#hero'     },
+  { label: t().nav.services, href: '#services' },
+  { label: t().nav.reviews,  href: '#reviews'  },
+  { label: t().nav.contact,  href: '#contact'  },
 ];
 
 // ---------------------------------------------------------------------------
 // STATS
 // ---------------------------------------------------------------------------
 export const STATS: StatItem[] = [
-  { value: '—', label: 'Years of experience' },
-  { value: '—', label: 'Happy customers'     },
-  { value: '—', label: 'Satisfaction rate'   },
-  { value: '—', label: 'Projects completed'  },
+  { value: '—', label: t().stats.years     },
+  { value: '—', label: t().stats.clients   },
+  { value: '—', label: t().stats.rating    },
+  { value: '—', label: t().stats.guarantee },
 ];
 
 // ---------------------------------------------------------------------------
