@@ -3,12 +3,19 @@
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { SITE_CONFIG } from '@/lib/config';
-import { NAV_ITEMS, IMAGES } from '@/lib/constants';
+import { IMAGES } from '@/lib/constants';
 import { t } from '@/lib/get-ui-text';
 import styles from './Header.module.css';
 
 export default function Header() {
   const ui = t();
+
+  const navLinks = [
+    { href: '#hero',     label: ui.nav.home     },
+    { href: '#services', label: ui.nav.services  },
+    { href: '#reviews',  label: ui.nav.reviews   },
+    { href: '#contact',  label: ui.nav.contact   },
+  ];
   const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -60,7 +67,7 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className={styles.nav}>
-          {NAV_ITEMS.map((item) => (
+          {navLinks.map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -97,7 +104,7 @@ export default function Header() {
       {/* Mobile menu */}
       {menuOpen && (
         <nav className={styles.mobileMenu}>
-          {NAV_ITEMS.map((item) => (
+          {navLinks.map((item) => (
             <a
               key={item.href}
               href={item.href}
