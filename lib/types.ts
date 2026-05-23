@@ -151,3 +151,15 @@ export interface HeroContent {
   subtitle: string;
   layout?: 'split' | 'full';
 }
+
+// German legal disclosure (§5 TMG) — non-null only for DE sites
+export interface ImprintData {
+  ownerFullName:      string;
+  companyLegalForm:   string;
+  vatId:              string;
+  registrationNumber: string;
+  impressumEmail:     string;
+  address:            string;
+  phone:              string;
+  businessName:       string;
+}
