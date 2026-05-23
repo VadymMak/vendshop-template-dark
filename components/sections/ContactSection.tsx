@@ -8,6 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 export default function ContactSection() {
   const ui = t();
   const lang = SITE_CONFIG.language || 'sk';
+
+  // Build map URL from the address ContactItem (📍) so it geocodes the real business
+  // address instead of using hardcoded coordinates. Falls back to a blank map if empty.
+  const addressItem = CONTACT_ITEMS.find((item) => item.icon === '📍');
+  const addressQuery = addressItem?.lines.filter(Boolean).join(', ') ?? '';
+  const mapSrc = addressQuery
+    ? `https://maps.google.com/maps?q=${encodeURIComponent(addressQuery)}&output=embed&hl=${lang}`
+    : `https://www.google.com/maps/embed?pb=!1m2!1ssk!2ssk&hl=${lang}`;
+
   return (
     <section id="contact" className={`section ${styles.section}`}>
       <div className="container">
@@ -40,7 +49,7 @@ export default function ContactSection() {
             {/* Map */}
             <ScrollReveal delay={300} className={styles.mapWrap}>
               <iframe
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.6!2d18.74!3d49.22!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDEzJzEyLjAiTiAxOMKwNDQnMjQuMCJF!5e0!3m2!1s${lang}!2s${lang}!4v1680000000000!5m2!1s${lang}!2s${lang}&hl=${lang}`}
+                src={mapSrc}
                 width="100%"
                 height="260"
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)', borderRadius: 'var(--radius-md)' }}
