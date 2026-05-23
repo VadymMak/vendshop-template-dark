@@ -1,12 +1,18 @@
 .page {
   min-height: 60vh;
-  padding: var(--spacing-lg, 4rem) 0;
+  padding-top: 120px;
+  padding-bottom: var(--spacing-lg, 4rem);
   background: var(--bg);
   color: var(--text);
 }
 
 .content {
   max-width: 720px;
+  margin: 0 auto;
+  background: var(--card, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.5rem;
 }
 
 .heading {
@@ -27,6 +33,7 @@
 
 .section:last-child {
   border-bottom: none;
+  margin-bottom: 0;
 }
 
 .subheading {
@@ -35,8 +42,6 @@
   font-weight: 600;
   color: var(--primary);
   margin-bottom: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .line {
