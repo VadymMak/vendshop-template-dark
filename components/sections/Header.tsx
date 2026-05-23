@@ -36,13 +36,21 @@ export default function Header() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  // Prepend "/" so anchor links work from sub-pages (/impressum, /datenschutz → /#hero).
+  // On the main page document.querySelector('#hero') succeeds → smooth scroll.
+  // On sub-pages it returns null → browser follows href="/#hero" to main page.
+  const resolvedHref = (href: string) => (href.startsWith('#') ? `/${href}` : href);
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
     closeMenu();
-    const el = document.querySelector(href);
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top, behavior: 'smooth' });
+    if (href.startsWith('#')) {
+      const el = document.querySelector(href);
+      if (el) {
+        e.preventDefault();
+        const top = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+      // else: let the browser follow href="/#section" to navigate home
     }
   };
 
@@ -50,7 +58,7 @@ export default function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${visible ? '' : styles.hidden}`}>
       <div className={`container ${styles.inner}`}>
         {/* Logo */}
-        <a href="#hero" className={styles.logoLink} onClick={(e) => handleNavClick(e, '#hero')}>
+        <a href={resolvedHref('#hero')} className={styles.logoLink} onClick={(e) => handleNavClick(e, '#hero')}>
           {IMAGES.logo ? (
             <Image
               src={IMAGES.logo}
@@ -70,7 +78,7 @@ export default function Header() {
           {navLinks.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={resolvedHref(item.href)}
               className={styles.navLink}
               onClick={(e) => handleNavClick(e, item.href)}
             >
@@ -107,7 +115,7 @@ export default function Header() {
           {navLinks.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={resolvedHref(item.href)}
               className={styles.mobileLink}
               onClick={(e) => handleNavClick(e, item.href)}
             >
