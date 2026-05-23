@@ -19,7 +19,7 @@ export default function ImpressumPage() {
     <>
       <Header />
       <main className={styles.page}>
-        <div className={`container ${styles.content}`}>
+        <div className={styles.content}>
           <h1 className={styles.heading}>Impressum</h1>
 
           <section className={styles.section}>
