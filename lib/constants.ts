@@ -12,6 +12,7 @@ import type {
   MenuCategory,
   ImageMap,
   HeroContent,
+  ImprintData,
 } from './types';
 import { t } from './get-ui-text';
 
@@ -114,3 +115,8 @@ export const CHAT_CONFIG: ChatConfig = {
   ],
   fallbackResponse: t().chat.fallback,
 };
+
+// --------------------------------------------------------
+// IMPRINT (populated by site generator for DE; null otherwise)
+// --------------------------------------------------------
+export const IMPRINT: ImprintData | null = null;
