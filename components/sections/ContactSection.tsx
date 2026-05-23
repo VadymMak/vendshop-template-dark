@@ -1,4 +1,5 @@
 import { CONTACT_ITEMS, FAQ_ITEMS } from '@/lib/constants';
+import { SITE_CONFIG } from '@/lib/config';
 import { t } from '@/lib/get-ui-text';
 import styles from './ContactSection.module.css';
 import FaqAccordion from './FaqAccordion';
@@ -6,6 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
 export default function ContactSection() {
   const ui = t();
+  const lang = SITE_CONFIG.language || 'sk';
   return (
     <section id="contact" className={`section ${styles.section}`}>
       <div className="container">
@@ -38,14 +40,14 @@ export default function ContactSection() {
             {/* Map */}
             <ScrollReveal delay={300} className={styles.mapWrap}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.6!2d18.74!3d49.22!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDEzJzEyLjAiTiAxOMKwNDQnMjQuMCJF!5e0!3m2!1ssk!2ssk!4v1680000000000!5m2!1ssk!2ssk"
+                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.6!2d18.74!3d49.22!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDEzJzEyLjAiTiAxOMKwNDQnMjQuMCJF!5e0!3m2!1s${lang}!2s${lang}!4v1680000000000!5m2!1s${lang}!2s${lang}&hl=${lang}`}
                 width="100%"
                 height="260"
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)', borderRadius: 'var(--radius-md)' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title={ui.contact.mapTitle}
+                title="Mapa"
               />
             </ScrollReveal>
           </div>
