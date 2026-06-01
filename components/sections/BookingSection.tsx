@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { SERVICE_CATEGORIES } from '@/lib/constants';
 import { t } from '@/lib/get-ui-text';
+import { SITE_CONFIG } from '@/lib/config';
 import styles from './BookingSection.module.css';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
@@ -35,7 +36,16 @@ export default function BookingSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Replace with your API call or email service
+    const phone = SITE_CONFIG.whatsappNumber;
+    const text = encodeURIComponent(
+      `Rezervácia / Booking:\n` +
+      `Meno: ${form.name}\n` +
+      `Telefón: ${form.phone}\n` +
+      `Služba: ${form.service}\n` +
+      `Dátum: ${form.date}\n` +
+      `Správa: ${form.message}`
+    );
+    window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
     setSubmitted(true);
   };
 
