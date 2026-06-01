@@ -1,5 +1,6 @@
 import { REVIEWS } from '@/lib/constants';
 import { t } from '@/lib/get-ui-text';
+import { SITE_CONFIG } from '@/lib/config';
 import styles from './ReviewsSection.module.css';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
@@ -30,6 +31,22 @@ export default function ReviewsSection() {
             </ScrollReveal>
           ))}
         </div>
+
+        {REVIEWS.length === 0 && SITE_CONFIG.googleReviewsUrl && (
+          <ScrollReveal>
+            <div className={styles.googleReviews}>
+              <p>Pozrite si naše recenzie</p>
+              <a
+                href={SITE_CONFIG.googleReviewsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn--primary"
+              >
+                Zobraziť recenzie na Google ★
+              </a>
+            </div>
+          </ScrollReveal>
+        )}
       </div>
     </section>
   );

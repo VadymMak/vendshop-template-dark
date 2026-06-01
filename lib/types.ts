@@ -30,6 +30,7 @@ export interface SiteConfig {
   headingFont: 'oswald' | 'playfair' | 'cormorant' | 'inter';
   whatsappNumber: string;
   contactEmail: string;
+  googleReviewsUrl: string;
 }
 
 // Navigation

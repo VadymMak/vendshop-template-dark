@@ -9,4 +9,5 @@ export const SITE_CONFIG: SiteConfig = {
   headingFont: 'inter',
   whatsappNumber: '',
   contactEmail: '',
+  googleReviewsUrl: '',
 };
